@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>右键菜单插件ContextMenu学习示例</title>
+	<script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="jquery.contextmenu.r2.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+
+  		$('span.demo1').contextMenu('myMenu1', {
+      		bindings: {
+        		'open': function(t) {
+         			 alert('Trigger was '+t.id+'\nAction was Open');
+        		 },
+        		'email': function(t) {
+          			alert('Trigger was '+t.id+'\nAction was Email');
+       			 },
+        		'save': function(t) {
+          			alert('Trigger was '+t.id+'\nAction was Save');
+        		 },
+        		'delete': function(t) {
+          			alert('Trigger was '+t.id+'\nAction was Delete');
+        		}
+      			}
+
+    	});
+
+		});
+	</script>
+</head>
+<body>
+	<p>
+        <span class="demo1" id="demo1_yellow" style="background-color:yellow"><b>右键菜单1</b></span>
+        <span class="demo1" id="demo1_green" style="background-color:lightgreen"><b>右键菜单2</b></span>
+
+      </p>
+ <div class="contextMenu" id="myMenu1">
+      <ul>
+        <li id="open"><img src="folder.png" />打开</li>
+        <li id="email"><img src="email.png" />邮件</li>
+        <li id="save"><img src="disk.png" />保存</li>
+        <li id="close"><img src="cross.png" />关闭</li>
+      </ul>
+    </div>
+</body>
+</html>

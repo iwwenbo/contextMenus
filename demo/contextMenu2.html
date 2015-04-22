@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>右键菜单插件ContextMenu学习示例</title>
+	<script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="jquery.contextmenu.r2.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+
+  		$('#demo2').contextMenu('myMenu2', {
+
+      menuStyle: {
+
+        border: '2px solid #000'
+
+      },
+
+      itemStyle: {
+
+        fontFamily : 'verdana',
+
+        backgroundColor : '#666',
+
+        color: 'white',
+
+        border: 'none',
+
+        padding: '1px'
+
+      },
+
+      itemHoverStyle: {
+
+        color: '#fff',
+
+        backgroundColor: '#0f0',
+
+        border: 'none'
+
+      }
+
+    });
+
+		});
+	</script>
+</head>
+<body>
+
+	<p id="demo2" style="background-color:lightpink;">
+      Right clicking anywhere in this paragraph will trigger the context menu.
+    </p>
+
+<div class="contextMenu" id="myMenu2">
+    <ul>
+      <li id="item_1">Item 1</li>
+      <li id="item_2">Item 2</li>
+      <li id="item_3">Item 3</li>
+      <li id="item_4">Item 4</li>
+    </ul>
+  </div>
+</body>
+</html>

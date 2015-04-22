@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>右键菜单插件ContextMenu学习示例</title>
+	<script type="text/javascript" src="jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="jquery.contextmenu.r2.js"></script>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+     $('span.demo3').contextMenu('myMenu3', {
+
+      onContextMenu: function(e) {
+
+        if ($(e.target).attr('id') == 'dontShow') return false;
+
+        else return true;
+
+      },
+
+      onShowMenu: function(e, menu) {
+
+        if ($(e.target).attr('id') == 'showOne') {
+
+          $('#item_2, #item_3', menu).remove();
+
+        }
+
+        return menu;
+
+      }
+
+    });
+
+    });
+
+	</script>
+</head>
+<body>
+
+	<p style="font-weight: bold;">
+
+      <span class="demo3" id="dontShow" style="padding: 5px; background-color:pink">Don't show menu</span>
+
+      <span class="demo3" id="showOne" style="padding: 5px;background-color:lightgreen">Just first item</span>
+
+      <span class="demo3" id="showAll" style="padding: 5px;background-color:lightblue">Show all</span>
+
+    </p>
+
+<div class="contextMenu" id="myMenu3">
+    <ul>
+      <li id="item_1">Item 1</li>
+      <li id="item_2">Item 2</li>
+      <li id="item_3">Item 3</li>
+    </ul>
+  </div>
+</body>
+</html>
